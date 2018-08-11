@@ -31,4 +31,6 @@
 /config/master.key
 
 /coverage
+/.yardoc
+/doc/
 
