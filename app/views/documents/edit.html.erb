@@ -1,6 +1,7 @@
-<h1>Editing Document</h1>
+<header>
+  <h1><%= t('Document.Edit') %></h1>
+</header>
 
-<%= render 'form', document: @document %>
-
-<%= link_to 'Show', @document %> |
-<%= link_to 'Back', documents_path %>
+<main>
+  <%= render 'form', document: @document, cancel_to: @document %>
+</main>

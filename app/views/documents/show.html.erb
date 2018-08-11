@@ -1,14 +1,30 @@
-<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @document.name %>
-</p>
+<header>
+  <h1><%= t('Document.DetailView') %></h1>
+</header>
 
-<p>
-  <strong>Description:</strong>
-  <%= @document.description %>
-</p>
+<main>
+  <%= render 'notice' %>
 
-<%= link_to 'Edit', edit_document_path(@document) %> |
-<%= link_to 'Back', documents_path %>
+  <section>
+    <div>
+      <div class="card">
+        <div class="card-section">
+          <strong><%= Document.human_attribute_name('name') %>:</strong> <%= @document.name %>
+        </div>
+        <div class="card-section">
+          <strong><%= Document.human_attribute_name('description') %>:</strong> <%= @document.description %>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="buttons">
+    <div>
+      <%= link_to t('Edit'), edit_document_path(@document) %>
+      <%= link_to t('Delete'), @document, method: :delete, data: { confirm: t('ConfirmDelete', model: Document.model_name.human) }, class: "alert" %>
+      <%= link_to t('Back'), documents_path, class: "warning" %>
+    </div>
+  </section>
+
+</main>

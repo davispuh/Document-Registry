@@ -29,18 +29,28 @@
 # To learn more, please read the Rails Internationalization guide
 # available at http://guides.rubyonrails.org/i18n.html.
 
-en:
-  New: New %{model}
-  Edit: Edit
-  Delete: Delete
-  Cancel: Cancel
-  Back: Back
-  WasCreated: "%{model} was successfully created."
-  WasUpdated: "%{model} was successfully updated."
-  WasDeleted: "%{model} was successfully destroyed."
-  ConfirmDelete: Are you sure to delete %{model}?
+lv:
+  activerecord:
+    models:
+      document:
+        zero: dokuments
+        one: dokumentu
+        other: dokumenti
+    attributes:
+      document:
+        name: Nosaukums
+        description: Apraksts
+  New: Jauns %{model}
+  Edit: Labot
+  Delete: Dzēst
+  Cancel: Atcelt
+  Back: Atpakaļ
+  WasCreated: "%{model} tika veiksmīgi izveidots."
+  WasUpdated: "%{model} tika veiksmīgi atjaunināts."
+  WasDeleted: "%{model} tika veiksmīgi izdzēsts."
+  ConfirmDelete: Vai tiešām dzēst %{model}?'
   Document:
-    Register: Document register
-    List: Document list
-    Edit: Edit Document
-    DetailView: Document detail view
+    Register: Dokumentu reģistrs
+    List: Dokumentu saraksts
+    Edit: Labot dokumentu
+    DetailView: Dokumenta detalizētais skats

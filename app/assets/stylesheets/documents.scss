@@ -1,3 +1,83 @@
 // Place all the styles related to the Documents controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+header
+{
+    @extend .callout, .medium, .primary, .text-center;
+}
+
+main
+{
+    @extend .grid-container;
+}
+
+section
+{
+    @extend .grid-x, .align-center;
+    margin-bottom: 20px;
+    word-wrap:break-word;
+}
+
+#notice, section > div
+{
+    @extend .cell, .small-10, .medium-8, .large-9;
+}
+
+#notice
+{
+    @extend .callout, .success;
+}
+
+
+tfoot td
+{
+    @extend .text-center;
+    padding-left: 1.4rem;
+    padding-right: 1.4rem;
+}
+
+tfoot a
+{
+    @extend .expanded;
+}
+
+tfoot a, .buttons a, .buttons input[type="submit"]
+{
+    @extend .button;
+    margin-top: 0.5rem; margin-bottom: 0.5rem;
+    min-width: 7.5em;
+}
+
+
+.field
+{
+    @extend .grid-x, .grid-margin-x;
+}
+
+.field > div:not(:first-child)
+{
+    @extend .cell, .auto;
+}
+
+.field > div:first-child
+{
+    @extend .cell, .small-1, .medium-1, .large-2, .text-right;
+    min-width: 3.5em;
+}
+
+.field textarea
+{
+    width: 100%;
+}
+
+.buttons > div
+{
+     @extend .button-group, .align-center;
+}
+
+
+#error_explanation > div
+{
+    @extend .callout, .alert
+}

@@ -1,3 +1,5 @@
+# encoding: UTF-8
+
 require 'rails_helper'
 
 # Specs in this file have access to a helper object that includes
@@ -11,5 +13,15 @@ require 'rails_helper'
 #   end
 # end
 RSpec.describe DocumentsHelper, type: :helper do
-  pending "add some examples to (or delete) #{__FILE__}"
+   describe "truncate" do
+     it "truncates a string" do
+       expect(helper.truncate('abc', 3)).to eq('abc')
+       expect(helper.truncate('ab', 3)).to eq('ab')
+       expect(helper.truncate('abc', 2)).to eq('..')
+       expect(helper.truncate('🇬🇧', 1)).to eq('🇬🇧')
+       expect(helper.truncate('🇬🇧🇫🇷🇬🇧', 3)).to eq('🇬🇧🇫🇷🇬🇧')
+       expect(helper.truncate('🇬🇧🇫🇷🇬🇧🇫🇷', 3)).to eq('...')
+       expect(helper.truncate('🇬🇧🇫🇷.-.🇬🇧=🇫🇷🇬🇧', 7)).to eq('🇬🇧🇫🇷.-...')
+     end
+   end
 end

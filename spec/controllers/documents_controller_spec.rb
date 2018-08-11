@@ -29,11 +29,11 @@ RSpec.describe DocumentsController, type: :controller do
   # Document. As you add validations to Document, be sure to
   # adjust the attributes here as well.
   let(:valid_attributes) {
-    skip("Add a hash of attributes valid for your model")
+    { name: 'Document Name', description: 'Docuemnt Description' }
   }
 
   let(:invalid_attributes) {
-    skip("Add a hash of attributes invalid for your model")
+    valid_attributes.update(name: nil, other: 'yes')
   }
 
   # This should return the minimal set of values that should be in the session
@@ -97,14 +97,15 @@ RSpec.describe DocumentsController, type: :controller do
   describe "PUT #update" do
     context "with valid params" do
       let(:new_attributes) {
-        skip("Add a hash of attributes valid for your model")
+        { name: 'New Document Name', description: 'New Docuemnt Description' }
       }
 
       it "updates the requested document" do
         document = Document.create! valid_attributes
         put :update, params: {id: document.to_param, document: new_attributes}, session: valid_session
         document.reload
-        skip("Add assertions for updated state")
+        expect(document.name).to eq(new_attributes[:name])
+        expect(document.description).to eq(new_attributes[:description])
       end
 
       it "redirects to the document" do
