@@ -35,6 +35,7 @@ en:
   Delete: Delete
   Cancel: Cancel
   Back: Back
+  File: File
   WasCreated: "%{model} was successfully created."
   WasUpdated: "%{model} was successfully updated."
   WasDeleted: "%{model} was successfully destroyed."

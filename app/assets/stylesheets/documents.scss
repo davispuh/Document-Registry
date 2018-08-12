@@ -42,7 +42,7 @@ tfoot a
     @extend .expanded;
 }
 
-tfoot a, .buttons a, .buttons input[type="submit"]
+tfoot a, .buttons a, .buttons input[type="submit"], .field input[type="file"]
 {
     @extend .button;
     margin-top: 0.5rem; margin-bottom: 0.5rem;
@@ -80,4 +80,12 @@ tfoot a, .buttons a, .buttons input[type="submit"]
 #error_explanation > div
 {
     @extend .callout, .alert
+}
+
+.delete_file
+{
+    @extend .button, .alert;
+    padding: 2px 4px;
+    margin: 2px 4px;
+    font-weight: bold;
 }

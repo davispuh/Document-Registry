@@ -37,6 +37,16 @@
               <%= form.text_area :description, rows: "6" %>
             </div>
           </div>
+          <div class="field">
+            <div></div>
+            <%= render 'files', show_delete: true %>
+          </div>
+          <div class="field">
+            <div></div>
+            <div>
+              <%= form.file_field :files, multiple: true, direct_upload: true %>
+            </div>
+          </div>
         <% end %>
       </div>
     </section>

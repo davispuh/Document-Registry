@@ -54,9 +54,19 @@ class DocumentsController < ApplicationController
   # DELETE /documents/1
   # DELETE /documents/1.json
   def destroy
-    @document.destroy
+    if params[:file_id]
+      model = I18n.t('File')
+      url = edit_document_path(@document)
+      file = @document.files.find_by_id!(params[:file_id])
+      model += " '#{file.filename}'"
+      file.purge_later
+    else
+      model = Document.model_name.human(count: 0)
+      url = documents_url
+      @document.destroy
+    end
     respond_to do |format|
-      format.html { redirect_to documents_url, notice: I18n.t('WasDeleted', model: Document.model_name.human(count: 0)).capitalize }
+      format.html { redirect_to url, notice: I18n.t('WasDeleted', model: model).capitalize }
       format.json { head :no_content }
     end
   end
@@ -69,6 +79,6 @@ class DocumentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def document_params
-      params.require(:document).permit(:name, :description)
+      params.require(:document).permit(:name, :description, files: [])
     end
 end
