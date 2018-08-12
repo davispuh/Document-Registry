@@ -45,6 +45,7 @@ lv:
   Delete: Dzēst
   Cancel: Atcelt
   Back: Atpakaļ
+  File: Datne
   WasCreated: "%{model} tika veiksmīgi izveidots."
   WasUpdated: "%{model} tika veiksmīgi atjaunināts."
   WasDeleted: "%{model} tika veiksmīgi izdzēsts."

@@ -1,0 +1,17 @@
+
+<% if @document.files.attached? && @document.files.any? { |f| !f.id.blank? } %>
+    <div class="card">
+        <ul class="card-section">
+            <% @document.files.each do |file| %>
+              <% unless file.id.blank? %>
+                <li>
+                  <% if defined?(show_delete) && show_delete %>
+                    <%= link_to 'X', document_path({id: @document, file_id: file.id}), title: t('Delete'), method: :delete, class: "delete_file" %>
+                  <% end %>
+                  <%= link_to file.filename, rails_blob_path(file, disposition: "attachment") %>
+                </li>
+              <% end %>
+            <% end %>
+        </ul>
+    </div>
+<% end %>
