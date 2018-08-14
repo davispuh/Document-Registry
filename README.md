@@ -1,24 +1,22 @@
-# README
+# Document registry
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Ruby version
 
-Things you may want to cover:
+Need atleast Ruby 2.5.0
 
-* Ruby version
+## Database creation
 
-* System dependencies
+`rake db:migrate`
 
-* Configuration
+## How to run the test suite
 
-* Database creation
+`rake spec`
 
-* Database initialization
+## Documentation
 
-* How to run the test suite
+`rake doc`
 
-* Services (job queues, cache servers, search engines, etc.)
+## Deployment instructions
 
-* Deployment instructions
+`rake assets:precompile RAILS_ENV=production`
 
-* ...
